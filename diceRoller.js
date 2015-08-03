@@ -10,7 +10,7 @@ function diceRollerPlus(rolls){
   var output = [];
   for (var i = 0; i < rolls; i++){
     output.push(Math.floor(Math.random() * 6) + 1);
-  };
+  }
   return output;
 }
 
@@ -21,7 +21,7 @@ function diceRollerPremium(rolls, maxNumber){
   var output = [];
   for (var i = 0; i < rolls; i++){
     output.push(Math.floor(Math.random() * maxNumber) + 1);
-  };
+  }
   return output;
 }
 
@@ -36,9 +36,9 @@ function diceRollerEnterprise(rolls, maxNumber){
   }
   for (var i = 0; i < rolls; i++){
     output.push(Math.floor(Math.random() * maxNumber) + 1);
-  };
+  }
   return output;
 }
 
-console.log(diceRollerEnterprise(5 ));
+console.log(diceRollerEnterprise(5 )); // Take note of the space in the second argument.
 console.log(diceRollerEnterprise(5, 10));
