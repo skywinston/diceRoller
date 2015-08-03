@@ -42,3 +42,28 @@ function diceRollerEnterprise(rolls, maxNumber){
 
 console.log(diceRollerEnterprise(5 )); // Take note of the space in the second argument.
 console.log(diceRollerEnterprise(5, 10));
+
+// Recreated as a Constructor
+function DiceRoller (rolls, sides){
+  this.rolls = rolls;
+  this.sides = sides;
+  this.hand = function(){
+    var output = [];
+    if (this.sides === undefined){
+      this.sides = 6;
+    }
+    for (var i = 0; i < this.rolls; i++){
+    output.push(Math.floor(Math.random() * this.sides) + 1);
+  }
+  return output;
+  };
+}
+
+var game = new DiceRoller();
+console.log(game.hand());
+
+var game1 = new DiceRoller(5, 12);
+console.log(game1.hand());
+
+var game2 = new DiceRoller(7);
+console.log(game2.hand());
