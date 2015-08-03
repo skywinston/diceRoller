@@ -26,3 +26,19 @@ function diceRollerPremium(rolls, maxNumber){
 }
 
 console.log(diceRollerPremium(3, 11));
+
+
+// same as Premium, but sets max-range to 6 if maxNumber argument is omitted.
+function diceRollerEnterprise(rolls, maxNumber){
+  var output = [];
+  if (maxNumber === undefined){
+    maxNumber = 6;
+  }
+  for (var i = 0; i < rolls; i++){
+    output.push(Math.floor(Math.random() * maxNumber) + 1);
+  };
+  return output;
+}
+
+console.log(diceRollerEnterprise(5 ));
+console.log(diceRollerEnterprise(5, 10));
