@@ -67,3 +67,23 @@ console.log(game1.hand());
 
 var game2 = new DiceRoller(7);
 console.log(game2.hand());
+
+// Recreated as a Contructor that can be reinstantiated.  Built off a real-world object that can be re-rolled.
+// Behavior changes state internal to the object.
+
+function Dice (diceCount, sides){
+  this.roll = function(diceCount, sides){
+    this.hand = [];
+    if (sides === undefined){sides = 6;}
+    for (var i = 0; i < diceCount; i++){
+      this.hand.push(Math.floor(Math.random() * sides) + 1);
+    }
+  };
+}
+
+var game = new Dice();
+console.log(game.hand);
+game.roll(4);
+console.log(game.hand);
+game.roll(6);
+console.log(game.hand);
